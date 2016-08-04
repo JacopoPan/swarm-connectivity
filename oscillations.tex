@@ -1,0 +1,284 @@
+\documentclass{article}
+
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=15mm,
+ top=20mm,
+ }
+ \usepackage{comment}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}
+
+\begin{tikzpicture} 
+
+ \begin{axis}[ 
+ height=6.1cm, 
+ width=13cm, 
+ xlabel={iteration},
+ ylabel={$x_1$},
+% ymin = 0.0, 
+% ymax = +70.0, 
+ xmin = 0, 
+ xmax = 1000, 
+ %enlarge x limits=0.1,
+ enlarge y limits=0.1,
+ grid=major,
+ legend pos=outer north east, %north west
+ legend cell align=left,
+ ] 
+ 
+\addplot [color=blue,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node1] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 1, Node 1}
+
+\addplot [color=blue,mark=x,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node2] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 1, Node 2}
+
+\addplot [color=blue,mark=+,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node3] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 1, Node 3}
+
+\addplot [color=blue,mark=-,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node4] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 1, Node 4}
+
+\addplot [color=blue,mark=o,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node5] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 1, Node 5}
+%
+%\addplot [color=blue,mark=|,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node6] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 1, Node 6}
+%
+%\addplot [color=blue,mark=asterisk,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node7] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 1, Node 7}
+%
+%\addplot [color=blue,mark=star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node8] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 1, Node 8}
+%
+%\addplot [color=blue,mark=10-pointed star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node9] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 1, Node 9}
+%
+%\addplot [color=blue,mark=oplus,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node10] {./data/oscillator-1-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 1, Node 10}
+
+ 
+ \end{axis}
+ 
+ \end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture} 
+
+ \begin{axis}[ 
+ height=6.1cm, 
+ width=13cm, 
+ xlabel={iteration},
+ ylabel={$x_2$},
+% ymin = 0.0, 
+% ymax = +70.0, 
+ xmin = 0, 
+ xmax = 1000, 
+ %enlarge x limits=0.1,
+ enlarge y limits=0.1,
+ grid=major,
+ legend pos=outer north east, %north west
+ legend cell align=left,
+ ] 
+ 
+\addplot [color=red,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node1] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 2, Node 1}
+
+\addplot [color=red,mark=x,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node2] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 2, Node 2}
+
+\addplot [color=red,mark=+,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node3] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 2, Node 3}
+
+\addplot [color=red,mark=-,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node4] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 2, Node 4}
+
+%\addplot [color=red,mark=|,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node5] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 2, Node 5}
+%
+%\addplot [color=red,mark=o,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node6] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 2, Node 6}
+%
+%\addplot [color=red,mark=asterisk,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node7] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 2, Node 7}
+%
+%\addplot [color=red,mark=star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node8] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 2, Node 8}
+%
+%\addplot [color=red,mark=10-pointed star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node9] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 2, Node 9}
+%
+%\addplot [color=red,mark=oplus,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node10] {./data/oscillator-2-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 2, Node 10}
+
+ 
+ \end{axis}
+ 
+ \end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture} 
+
+ \begin{axis}[ 
+ height=6.1cm, 
+ width=13cm, 
+ xlabel={iteration},
+ ylabel={$x_3$},
+% ymin = 0.0, 
+% ymax = +70.0, 
+ xmin = 0, 
+ xmax = 50, 
+ %enlarge x limits=0.1,
+ enlarge y limits=0.1,
+ grid=major,
+ legend pos=outer north east, %north west
+ legend cell align=left,
+ ] 
+ 
+\addplot [color=black,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node1] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 3, Node 1}
+
+\addplot [color=black,mark=x,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node2] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 3, Node 2}
+
+\addplot [color=black,mark=+,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node3] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 3, Node 3}
+
+\addplot [color=black,mark=-,error bars/.cd,y dir=both,y explicit,]
+table[x=i,y=node4] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+\addlegendentry{Component 3, Node 4}
+
+%\addplot [color=black,mark=|,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node5] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 3, Node 5}
+%
+%\addplot [color=black,mark=o,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node6] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 3, Node 6}
+%
+%\addplot [color=black,mark=asterisk,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node7] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 3, Node 7}
+%
+%\addplot [color=black,mark=star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node8] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 3, Node 8}
+%
+%\addplot [color=black,mark=10-pointed star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node9] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 3, Node 9}
+%
+%\addplot [color=black,mark=oplus,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node10] {./data/oscillator-3-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Component 3, Node 10}
+
+ 
+ \end{axis}
+ 
+ \end{tikzpicture}
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% \begin{tikzpicture} 
+%
+% \begin{axis}[ 
+% height=6.1cm, 
+% width=13cm, 
+% xlabel={iteration},
+% ylabel={x},
+% ymin = -10.0, 
+% ymax = +10.0, 
+% xmin = 0, 
+% xmax = 2000, 
+% %enlarge x limits=0.1,
+% enlarge y limits=0.1,
+% grid=major,
+% legend pos=outer north east, %north west
+% legend cell align=left,
+% ] 
+% 
+%\addplot [color=green,mark=*,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node1] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 1}
+%
+%\addplot [color=green,mark=x,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node2] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 2}
+%
+%\addplot [color=green,mark=+,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node3] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 3}
+%
+%\addplot [color=green,mark=-,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node4] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 4}
+%
+%\addplot [color=green,mark=|,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node5] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 5}
+%
+%\addplot [color=green,mark=o,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node6] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 6}
+%
+%\addplot [color=green,mark=asterisk,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node7] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 7}
+%
+%\addplot [color=green,mark=star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node8] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 8}
+%
+%\addplot [color=green,mark=10-pointed star,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node9] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 9}
+%
+%\addplot [color=green,mark=oplus,error bars/.cd,y dir=both,y explicit,]
+%table[x=i,y=node10] {./data/oscillator-4-errorvssteps-sorrentino-1-0-standard.dat};
+%\addlegendentry{Oscillator 4, Node 10}
+%
+% 
+% \end{axis}
+% 
+% \end{tikzpicture}
+
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

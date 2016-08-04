@@ -1,0 +1,152 @@
+\documentclass{article}
+
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=15mm,
+ top=20mm,
+ }
+ \usepackage{comment}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}
+
+\begin{tikzpicture} 
+
+ \begin{axis}[ 
+ %height=7cm, 
+ width=13cm, 
+ xlabel={\# of steps},
+ ylabel={\% error},
+ ymin = 0.0, 
+ ymax = 10.0, 
+ xmin = 0, 
+ xmax = 1000, 
+ enlarge x limits=0.1,
+ enlarge y limits=0.1,
+ grid=major,
+ legend pos=outer north east, %north west
+ ] 
+ 
+\addplot [color=blue,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errory] {./data/errorvssteps-bertrand-1.dat};
+\addlegendentry{Bertrand, $K = 10$}
+
+%\addplot [color=blue,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/errorvssteps-bertrand-2.dat};
+%\addlegendentry{Bertrand, $K = 100$}
+
+%\addplot [color=blue,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/errorvssteps-bertrand-3.dat};
+%\addlegendentry{Bertrand, $K = 100$}
+
+
+\addplot [color=red,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errory] {./data/errorvssteps-dilorenzo-1.dat};
+\addlegendentry{Di Lorenzo, $K = 10$}
+
+%\addplot [color=red,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/errorvssteps-dilorenzo-2.dat};
+%\addlegendentry{Di Lorenzo, $K = 100$}
+
+%\addplot [color=red,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/errorvssteps-dilorenzo-3.dat};
+%\addlegendentry{Di Lorenzo, $K = 100$}
+
+
+\addplot [color=black,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errory] {./data/errorvssteps-sahai-1.dat};
+\addlegendentry{Sahai, $K = 10$}
+
+%\addplot [color=black,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/errorvssteps-sahai-2.dat};
+%\addlegendentry{Sahai, $K = 100$}
+
+%\addplot [color=black,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/errorvssteps-sahai-3.dat};
+%\addlegendentry{Sahai, $K = 100$}
+ 
+ \end{axis}
+ 
+ \end{tikzpicture}
+
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+\begin{figure}
+
+\begin{tikzpicture} 
+
+ \begin{semilogyaxis}[ 
+ %height=7cm, 
+ %width=8cm, 
+ xlabel={$p$},
+ ylabel={\# of steps},
+ ymin = 0.0, 
+ ymax = 1000.0, 
+ xmin = 0.0, 
+ xmax = 1.0, 
+ enlarge x limits=0.1,
+ grid=major,
+ legend pos=outer north east, %north west
+ ] 
+ 
+\addplot [color=blue,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errory] {./data/stepsvsp-bertrand-1.dat};
+\addlegendentry{Bertrand, $K = 10$}
+
+%\addplot [color=blue,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/stepsvsp-bertrand-2.dat};
+%\addlegendentry{Bertrand, $K = 100$}
+
+%\addplot [color=blue,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/stepsvsp-bertrand-3.dat};
+%\addlegendentry{Bertrand, $K = 1000$}
+
+
+\addplot [color=red,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errory] {./data/stepsvsp-dilorenzo-1.dat};
+\addlegendentry{Di Lorenzo, $K = 10$}
+
+%\addplot [color=red,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/stepsvsp-dilorenzo-2.dat};
+%\addlegendentry{Di Lorenzo, $K = 100$}
+
+%\addplot [color=red,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/stepsvsp-dilorenzo-3.dat};
+%\addlegendentry{Di Lorenzo, $K = 1000$}
+
+
+\addplot [color=black,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errory] {./data/stepsvsp-sahai-1.dat};
+\addlegendentry{Sahai, $K = 10$}
+
+%\addplot [color=black,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/stepsvsp-sahai-2.dat};
+%\addlegendentry{Sahai, $K = 100$}
+
+%\addplot [color=black,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errory] {./data/stepsvsp-sahai-3.dat};
+%\addlegendentry{Sahai, $K = 1000$}
+ 
+ \end{semilogyaxis}
+ 
+ \end{tikzpicture}
+
+
+\end{figure}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

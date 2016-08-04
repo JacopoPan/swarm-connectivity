@@ -1,0 +1,160 @@
+\documentclass{article}
+
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=15mm,
+ top=20mm,
+ }
+ \usepackage{comment}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}
+
+\begin{tikzpicture} 
+
+ \begin{axis}[ 
+ height=10cm, 
+ width=13cm, 
+ xlabel={\# of steps},
+ ylabel={\% error},
+ ymin = 0.0, 
+ ymax = 4.0, 
+ xmin = 0, 
+ xmax = 8000, 
+ enlarge x limits=0.1,
+ enlarge y limits=0.1,
+ grid=major,
+ legend pos=outer north east, %north west
+ legend cell align=left,
+ ] 
+ 
+\addplot [color=blue,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.dat};
+\addlegendentry{Bertrand, $K = 10$, $p=0.0$}
+
+%\addplot [color=blue,mark=o,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.005.dat};
+%\addlegendentry{Bertrand, $K = 10$, $p=0.005$}
+
+\addplot [color=blue,mark=x,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.01.dat};
+\addlegendentry{Bertrand, $K = 10$, $p=0.01$}
+
+\addplot [color=blue,mark=diamond,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.05.dat};
+\addlegendentry{Bertrand, $K = 10$, $p=0.05$}
+
+\addplot [color=blue,mark=pentagon,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.1.dat};
+\addlegendentry{Bertrand, $K = 10$, $p=0.1$}
+
+%\addplot [color=blue,mark=star,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.02.dat};
+%\addlegendentry{Bertrand, $K = 10$, $p=0.02$}
+%
+%\addplot [color=blue,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.4.dat};
+%\addlegendentry{Bertrand, $K = 10$, $p=0.4$}
+%
+%\addplot [color=blue,mark=|,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.6.dat};
+%\addlegendentry{Bertrand, $K = 10$, $p=0.6$}
+%
+%\addplot [color=blue,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-bertrand-1-0.8.dat};
+%\addlegendentry{Bertrand, $K = 10$, $p=0.8$}
+
+%%%
+
+\addplot [color=red,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.dat};
+\addlegendentry{Di Lorenzo, $K = 10$, $p=0.0$}
+
+%\addplot [color=red,mark=o,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.005.dat};
+%\addlegendentry{Di Lorenzo, $K = 10$, $p=0.005$}
+
+\addplot [color=red,mark=x,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.01.dat};
+\addlegendentry{Di Lorenzo, $K = 10$, $p=0.01$}
+
+\addplot [color=red,mark=diamond,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.05.dat};
+\addlegendentry{Di Lorenzo, $K = 10$, $p=0.05$}
+
+\addplot [color=red,mark=pentagon,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.1.dat};
+\addlegendentry{Di Lorenzo, $K = 10$, $p=0.1$}
+
+%\addplot [color=red,mark=star,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.2.dat};
+%\addlegendentry{Di Lorenzo, $K = 10$, $p=0.2$}
+%
+%\addplot [color=red,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.4.dat};
+%\addlegendentry{Di Lorenzo, $K = 10$, $p=0.4$}
+%
+%\addplot [color=red,mark=|,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.6.dat};
+%\addlegendentry{Di Lorenzo, $K = 10$, $p=0.6$}
+%
+%\addplot [color=red,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-dilorenzo-1-0.8.dat};
+%\addlegendentry{Di Lorenzo, $K = 10$, $p=0.8$}
+
+%%%
+
+\addplot [color=black,mark=*,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.dat};
+\addlegendentry{Sahai, $K = 10$, $p=0.0$}
+
+%\addplot [color=black,mark=o,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.005.dat};
+%\addlegendentry{Sahai, $K = 10$, $p=0.005$}
+
+\addplot [color=black,mark=x,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.01.dat};
+\addlegendentry{Sahai, $K = 10$, $p=0.01$}
+
+\addplot [color=black,mark=diamond,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.05.dat};
+\addlegendentry{Sahai, $K = 10$, $p=0.05$}
+
+\addplot [color=black,mark=pentagon,error bars/.cd,y dir=both,y explicit,]
+table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.1.dat};
+\addlegendentry{Sahai, $K = 10$, $p=0.1$}
+
+%\addplot [color=black,mark=star,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.2.dat};
+%\addlegendentry{Sahai, $K = 10$, $p=0.2$}
+%
+%\addplot [color=black,mark=triangle*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.4.dat};
+%\addlegendentry{Sahai, $K = 10$, $p=0.4$}
+%
+%\addplot [color=black,mark=|,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.6.dat};
+%\addlegendentry{Sahai, $K = 10$, $p=0.6$}
+%
+%\addplot [color=black,mark=square*,error bars/.cd,y dir=both,y explicit,]
+%table[x=x,y=y,y error=errorx] {./data/errorvssteps-sahai-1-0.8.dat};
+%\addlegendentry{Sahai, $K = 10$, $p=0.8$}
+ 
+ \end{axis}
+ 
+ \end{tikzpicture}
+
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
